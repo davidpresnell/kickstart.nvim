@@ -99,7 +99,7 @@ do
   vim.g.maplocalleader = ' '
 
   -- Set to true if you have a Nerd Font installed and selected in the terminal
-  vim.g.have_nerd_font = false
+  vim.g.have_nerd_font = true
 
   -- [[ Setting options ]]
   --  See `:help vim.o`
@@ -882,6 +882,15 @@ do
     -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true },
   }
+
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = {'c','cpp'},
+    callback = function()
+      vim.bo.tabstop = 4
+      vim.bo.shiftwidth = 4
+      vim.bo.softtabstop = 4
+    end,
+  })
 end
 
 -- ============================================================
