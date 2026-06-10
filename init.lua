@@ -884,7 +884,7 @@ do
   }
 
   vim.api.nvim_create_autocmd('FileType', {
-    pattern = {'c','cpp'},
+    pattern = {'c','cpp', 'go'},
     callback = function()
       vim.bo.tabstop = 4
       vim.bo.shiftwidth = 4
